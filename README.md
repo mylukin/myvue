@@ -69,7 +69,7 @@ console.log(people.age);
 - Watcher 订阅者：收到属性的变化，然后更新视图
 - Compile 解析器：解析指令，初始化模版，绑定订阅者
 
-![IMAGE](./流程图1.jpg)
+![IMAGE](./流程图2.jpg)
 
 顺着这条思路我们一步一步去实现。
 
