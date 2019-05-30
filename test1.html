@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>test1</title>
+  </head>
+
+  <body>
+    <script>
+      var people = {}
+      var age
+      Object.defineProperty(people, 'age', {
+        get: function() {
+          console.log('get: 获取年龄')
+          return age
+        },
+        set: function(newVal) {
+          console.log('set: 设置年龄')
+          age = newVal
+        }
+      })
+      people.age = 18
+      console.log('people.age: ', people.age)
+    </script>
+  </body>
+</html>

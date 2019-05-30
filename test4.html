@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>test4</title>
+  </head>
+
+  <body>
+    <script src="./js/observer.js"></script>
+    <script src="./js/watcher.js"></script>
+    <script src="./js/compile.js"></script>
+    <script>
+      /* eslint-disable no-new */
+      /* eslint-disable no-undef */
+      function mvue(options) {
+        this.$options = options
+        this.$data = options.data
+        this.$el = document.querySelector(options.el)
+        this.init()
+      }
+      mvue.prototype.init = function() {
+        observer(this.$data)
+        new Compile(this)
+      }
+    </script>
+    <div id="app">{{ word }}</div>
+    <script>
+      const vm = new mvue({
+        el: '#app',
+        data: {
+          word: 'hello world, hello everyone!'
+        }
+      })
+    </script>
+  </body>
+</html>

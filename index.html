@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>MVVM</title>
+  </head>
+
+  <body>
+    <script src="./js/observer.js"></script>
+    <script src="./js/watcher.js"></script>
+    <script src="./js/compile.js"></script>
+    <script src="./js/mvue.js"></script>
+    <div id="app">
+      <input type="text" v-model="word" />
+      <p>{{ word }}</p>
+      <button onclick="sayHi()">change model</button>
+    </div>
+    <script>
+      const vm = new mvue({
+        el: '#app',
+        data: {
+          word: 'hello world!'
+        }
+      })
+      function sayHi() {
+        vm.word = `Hi, i am No.${parseInt(Math.random() * 100000)}`
+      }
+    </script>
+  </body>
+</html>
